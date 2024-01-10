@@ -1,0 +1,567 @@
+2024-01-10 17:18:54,040 INFO    StreamThr :2769106 [internal.py:wandb_internal():86] W&B internal server running at pid: 2769106, started at: 2024-01-10 17:18:54.039640
+2024-01-10 17:18:54,079 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status
+2024-01-10 17:18:54,080 INFO    WriterThread:2769106 [datastore.py:open_for_write():85] open: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/run-bqb5ymem.wandb
+2024-01-10 17:18:54,080 DEBUG   SenderThread:2769106 [sender.py:send():380] send: header
+2024-01-10 17:18:54,171 DEBUG   SenderThread:2769106 [sender.py:send():380] send: run
+2024-01-10 17:18:55,319 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: check_version
+2024-01-10 17:18:55,333 INFO    SenderThread:2769106 [dir_watcher.py:__init__():211] watching files in: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files
+2024-01-10 17:18:55,333 INFO    SenderThread:2769106 [sender.py:_start_run_threads():1122] run started: bqb5ymem with start time 1704878334.023708
+2024-01-10 17:18:55,333 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: check_version
+2024-01-10 17:18:55,690 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: run_start
+2024-01-10 17:18:55,696 DEBUG   HandlerThread:2769106 [system_info.py:__init__():32] System info init
+2024-01-10 17:18:55,696 DEBUG   HandlerThread:2769106 [system_info.py:__init__():47] System info init done
+2024-01-10 17:18:55,696 INFO    HandlerThread:2769106 [system_monitor.py:start():194] Starting system monitor
+2024-01-10 17:18:55,697 INFO    SystemMonitor:2769106 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-10 17:18:55,697 INFO    HandlerThread:2769106 [system_monitor.py:probe():214] Collecting system info
+2024-01-10 17:18:55,697 INFO    SystemMonitor:2769106 [interfaces.py:start():190] Started cpu monitoring
+2024-01-10 17:18:55,698 INFO    SystemMonitor:2769106 [interfaces.py:start():190] Started disk monitoring
+2024-01-10 17:18:55,698 INFO    SystemMonitor:2769106 [interfaces.py:start():190] Started gpu monitoring
+2024-01-10 17:18:55,699 INFO    SystemMonitor:2769106 [interfaces.py:start():190] Started memory monitoring
+2024-01-10 17:18:55,699 INFO    SystemMonitor:2769106 [interfaces.py:start():190] Started network monitoring
+2024-01-10 17:18:55,722 DEBUG   HandlerThread:2769106 [system_info.py:probe():196] Probing system
+2024-01-10 17:18:55,728 DEBUG   HandlerThread:2769106 [system_info.py:_probe_git():181] Probing git
+2024-01-10 17:18:55,737 DEBUG   HandlerThread:2769106 [system_info.py:_probe_git():189] Probing git done
+2024-01-10 17:18:55,737 DEBUG   HandlerThread:2769106 [system_info.py:probe():244] Probing system done
+2024-01-10 17:18:55,737 DEBUG   HandlerThread:2769106 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-46-generic-x86_64-with-glibc2.17', 'python': '3.8.13', 'heartbeatAt': '2024-01-10T09:18:55.722556', 'startedAt': '2024-01-10T09:18:54.016991', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'train.py', 'codePathLocal': 'train.py', 'codePath': 'train.py', 'git': {'remote': None, 'commit': '18c7fe0993c97a9f7a0f2252b6f7c1dee73e5c87'}, 'email': 'none', 'root': '/home/shangjian/code/Research/Multimodal & LLM/SLM', 'host': 'scau540-Song', 'username': 'shangjian', 'executable': '/home/shangjian/miniconda3/envs/pro/bin/python', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 4.130916666666666, 'min': 2200.0, 'max': 3500.0}, 'cpu_freq_per_core': [{'current': 4.449, 'min': 2200.0, 'max': 3500.0}, {'current': 4.449, 'min': 2200.0, 'max': 3500.0}, {'current': 3.5, 'min': 2200.0, 'max': 3500.0}, {'current': 4.449, 'min': 2200.0, 'max': 3500.0}, {'current': 3.5, 'min': 2200.0, 'max': 3500.0}, {'current': 3.5, 'min': 2200.0, 'max': 3500.0}, {'current': 4.449, 'min': 2200.0, 'max': 3500.0}, {'current': 3.5, 'min': 2200.0, 'max': 3500.0}, {'current': 4.449, 'min': 2200.0, 'max': 3500.0}, {'current': 3.5, 'min': 2200.0, 'max': 3500.0}, {'current': 4.449, 'min': 2200.0, 'max': 3500.0}, {'current': 4.449, 'min': 2200.0, 'max': 3500.0}], 'disk': {'/': {'total': 5498.824867248535, 'used': 2542.2087020874023}}, 'gpu': 'NVIDIA GeForce RTX 3090', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}], 'memory': {'total': 62.7276725769043}}
+2024-01-10 17:18:55,737 INFO    HandlerThread:2769106 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-10 17:18:55,737 INFO    HandlerThread:2769106 [system_monitor.py:probe():227] Publishing system info
+2024-01-10 17:18:55,737 DEBUG   HandlerThread:2769106 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2024-01-10 17:18:55,738 DEBUG   HandlerThread:2769106 [system_info.py:_save_pip():68] Saving pip packages done
+2024-01-10 17:18:55,738 DEBUG   HandlerThread:2769106 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2024-01-10 17:18:56,334 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_created():271] file/dir created: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/requirements.txt
+2024-01-10 17:18:56,334 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_created():271] file/dir created: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/conda-environment.yaml
+2024-01-10 17:18:56,769 DEBUG   HandlerThread:2769106 [system_info.py:_save_conda():87] Saving conda packages done
+2024-01-10 17:18:56,769 INFO    HandlerThread:2769106 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-10 17:18:56,774 DEBUG   SenderThread:2769106 [sender.py:send():380] send: files
+2024-01-10 17:18:56,774 INFO    SenderThread:2769106 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2024-01-10 17:18:56,778 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:18:56,779 DEBUG   SenderThread:2769106 [sender.py:send():380] send: telemetry
+2024-01-10 17:18:56,780 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:18:56,780 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:18:57,333 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/conda-environment.yaml
+2024-01-10 17:18:57,334 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_created():271] file/dir created: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/wandb-metadata.json
+2024-01-10 17:18:57,468 DEBUG   SenderThread:2769106 [sender.py:send():380] send: config
+2024-01-10 17:18:57,469 DEBUG   SenderThread:2769106 [sender.py:send():380] send: metric
+2024-01-10 17:18:57,469 DEBUG   SenderThread:2769106 [sender.py:send():380] send: telemetry
+2024-01-10 17:18:57,469 DEBUG   SenderThread:2769106 [sender.py:send():380] send: metric
+2024-01-10 17:18:57,469 WARNING SenderThread:2769106 [sender.py:send_metric():1329] Seen metric with glob (shouldn't happen)
+2024-01-10 17:18:57,469 DEBUG   SenderThread:2769106 [sender.py:send():380] send: telemetry
+2024-01-10 17:18:58,334 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_created():271] file/dir created: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:18:58,511 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/wandb-metadata.json?Expires=1704964737&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=uuVg60GTd8GdQCheL93vmYHBZEEI9e1d%2Fy%2Fgqe6Qed1ya1Rd6%2Bdtg8Vcoos8i%2BgkDczMJOXYQq9scRydh56nC%2FebwCSU9LQjPdUrqtLn62uj8veLhcwCdy1d%2BrOOj5UDnLw8UYBT46LvKdM183YGml%2FLKlJVkjF37%2FDa%2FUucMf7c3O8%2BQTME46KwCC9RXKEeUd8J4JRi%2FXOl%2FHLKFue4w4OcLdL7CeWDOh%2Fq8In0aVC5yZrBFrWYDG2oICIYCRk067RxRSEoiNikoEhVOu7Xg5pcyKG8dAiSL3ZjSRw8ZgYH3qarF23d2IdDMz2KkHPiJFSIdZ071OVsk7F9ceIHBA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:18:58,511 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2576'}
+2024-01-10 17:18:58,511 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:18:59,480 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:18:59,694 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/wandb-metadata.json?Expires=1704964737&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=uuVg60GTd8GdQCheL93vmYHBZEEI9e1d%2Fy%2Fgqe6Qed1ya1Rd6%2Bdtg8Vcoos8i%2BgkDczMJOXYQq9scRydh56nC%2FebwCSU9LQjPdUrqtLn62uj8veLhcwCdy1d%2BrOOj5UDnLw8UYBT46LvKdM183YGml%2FLKlJVkjF37%2FDa%2FUucMf7c3O8%2BQTME46KwCC9RXKEeUd8J4JRi%2FXOl%2FHLKFue4w4OcLdL7CeWDOh%2Fq8In0aVC5yZrBFrWYDG2oICIYCRk067RxRSEoiNikoEhVOu7Xg5pcyKG8dAiSL3ZjSRw8ZgYH3qarF23d2IdDMz2KkHPiJFSIdZ071OVsk7F9ceIHBA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:18:59,694 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2576'}
+2024-01-10 17:18:59,694 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:19:00,334 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:01,898 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/wandb-metadata.json?Expires=1704964737&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=uuVg60GTd8GdQCheL93vmYHBZEEI9e1d%2Fy%2Fgqe6Qed1ya1Rd6%2Bdtg8Vcoos8i%2BgkDczMJOXYQq9scRydh56nC%2FebwCSU9LQjPdUrqtLn62uj8veLhcwCdy1d%2BrOOj5UDnLw8UYBT46LvKdM183YGml%2FLKlJVkjF37%2FDa%2FUucMf7c3O8%2BQTME46KwCC9RXKEeUd8J4JRi%2FXOl%2FHLKFue4w4OcLdL7CeWDOh%2Fq8In0aVC5yZrBFrWYDG2oICIYCRk067RxRSEoiNikoEhVOu7Xg5pcyKG8dAiSL3ZjSRw8ZgYH3qarF23d2IdDMz2KkHPiJFSIdZ071OVsk7F9ceIHBA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:19:01,898 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2576'}
+2024-01-10 17:19:01,898 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:19:01,898 INFO    wandb-upload_0:2769106 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+    retries = retries.increment(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+    httplib_response = self._make_request(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1058, in _validate_conn
+    conn.connect()
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2549, in upload_file
+    response = self._upload_file_session.put(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2580, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/wandb/sdk/internal/internal_api.py", line 2549, in upload_file
+    response = self._upload_file_session.put(
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+wandb.sdk.lib.retry.TransientError: None
+2024-01-10 17:19:02,335 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:04,336 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:04,575 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:19:06,336 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:06,432 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/wandb-metadata.json?Expires=1704964737&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=uuVg60GTd8GdQCheL93vmYHBZEEI9e1d%2Fy%2Fgqe6Qed1ya1Rd6%2Bdtg8Vcoos8i%2BgkDczMJOXYQq9scRydh56nC%2FebwCSU9LQjPdUrqtLn62uj8veLhcwCdy1d%2BrOOj5UDnLw8UYBT46LvKdM183YGml%2FLKlJVkjF37%2FDa%2FUucMf7c3O8%2BQTME46KwCC9RXKEeUd8J4JRi%2FXOl%2FHLKFue4w4OcLdL7CeWDOh%2Fq8In0aVC5yZrBFrWYDG2oICIYCRk067RxRSEoiNikoEhVOu7Xg5pcyKG8dAiSL3ZjSRw8ZgYH3qarF23d2IdDMz2KkHPiJFSIdZ071OVsk7F9ceIHBA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:19:06,432 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2576'}
+2024-01-10 17:19:06,432 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:19:08,337 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:10,013 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:19:10,338 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:11,778 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:19:11,778 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:19:11,778 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:19:12,338 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:14,339 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:15,398 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:19:15,603 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/wandb-metadata.json?Expires=1704964737&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=uuVg60GTd8GdQCheL93vmYHBZEEI9e1d%2Fy%2Fgqe6Qed1ya1Rd6%2Bdtg8Vcoos8i%2BgkDczMJOXYQq9scRydh56nC%2FebwCSU9LQjPdUrqtLn62uj8veLhcwCdy1d%2BrOOj5UDnLw8UYBT46LvKdM183YGml%2FLKlJVkjF37%2FDa%2FUucMf7c3O8%2BQTME46KwCC9RXKEeUd8J4JRi%2FXOl%2FHLKFue4w4OcLdL7CeWDOh%2Fq8In0aVC5yZrBFrWYDG2oICIYCRk067RxRSEoiNikoEhVOu7Xg5pcyKG8dAiSL3ZjSRw8ZgYH3qarF23d2IdDMz2KkHPiJFSIdZ071OVsk7F9ceIHBA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:19:15,603 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2576'}
+2024-01-10 17:19:15,603 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:19:16,340 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:18,341 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:20,347 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:20,896 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:19:22,348 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:24,348 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:26,349 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:26,778 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:19:26,778 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:19:26,779 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:19:27,182 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:19:28,351 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:28,352 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/config.yaml
+2024-01-10 17:19:30,352 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:32,353 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:33,342 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:19:33,665 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/wandb-metadata.json?Expires=1704964737&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=uuVg60GTd8GdQCheL93vmYHBZEEI9e1d%2Fy%2Fgqe6Qed1ya1Rd6%2Bdtg8Vcoos8i%2BgkDczMJOXYQq9scRydh56nC%2FebwCSU9LQjPdUrqtLn62uj8veLhcwCdy1d%2BrOOj5UDnLw8UYBT46LvKdM183YGml%2FLKlJVkjF37%2FDa%2FUucMf7c3O8%2BQTME46KwCC9RXKEeUd8J4JRi%2FXOl%2FHLKFue4w4OcLdL7CeWDOh%2Fq8In0aVC5yZrBFrWYDG2oICIYCRk067RxRSEoiNikoEhVOu7Xg5pcyKG8dAiSL3ZjSRw8ZgYH3qarF23d2IdDMz2KkHPiJFSIdZ071OVsk7F9ceIHBA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:19:33,665 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2576'}
+2024-01-10 17:19:33,665 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:19:34,353 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:35,243 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-10 17:19:35,245 DEBUG   SenderThread:2769106 [sender.py:send():380] send: metric
+2024-01-10 17:19:35,245 DEBUG   SenderThread:2769106 [sender.py:send():380] send: metric
+2024-01-10 17:19:35,245 DEBUG   SenderThread:2769106 [sender.py:send():380] send: metric
+2024-01-10 17:19:35,246 DEBUG   SenderThread:2769106 [sender.py:send():380] send: history
+2024-01-10 17:19:35,246 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: summary_record
+2024-01-10 17:19:35,246 INFO    SenderThread:2769106 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-10 17:19:35,353 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_created():271] file/dir created: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/wandb-summary.json
+2024-01-10 17:19:36,354 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:37,354 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:38,354 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:38,507 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:19:40,355 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:41,778 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:19:41,779 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:19:41,779 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:19:42,356 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:43,740 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:19:44,356 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:46,357 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:48,358 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:48,855 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:19:50,367 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:52,368 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:54,369 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:54,587 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:19:55,699 DEBUG   SystemMonitor:2769106 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-10 17:19:55,700 DEBUG   SenderThread:2769106 [sender.py:send():380] send: stats
+2024-01-10 17:19:56,369 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:56,778 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:19:56,779 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:19:56,781 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:19:58,370 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:19:59,718 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:00,370 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:00,371 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/config.yaml
+2024-01-10 17:20:02,371 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:04,372 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:05,734 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:05,933 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/wandb-metadata.json?Expires=1704964737&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=uuVg60GTd8GdQCheL93vmYHBZEEI9e1d%2Fy%2Fgqe6Qed1ya1Rd6%2Bdtg8Vcoos8i%2BgkDczMJOXYQq9scRydh56nC%2FebwCSU9LQjPdUrqtLn62uj8veLhcwCdy1d%2BrOOj5UDnLw8UYBT46LvKdM183YGml%2FLKlJVkjF37%2FDa%2FUucMf7c3O8%2BQTME46KwCC9RXKEeUd8J4JRi%2FXOl%2FHLKFue4w4OcLdL7CeWDOh%2Fq8In0aVC5yZrBFrWYDG2oICIYCRk067RxRSEoiNikoEhVOu7Xg5pcyKG8dAiSL3ZjSRw8ZgYH3qarF23d2IdDMz2KkHPiJFSIdZ071OVsk7F9ceIHBA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:20:05,933 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2576'}
+2024-01-10 17:20:05,933 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:20:06,372 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:08,376 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:10,378 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:11,593 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:11,778 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:20:11,779 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:20:11,780 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:20:12,379 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:12,432 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-10 17:20:12,434 DEBUG   SenderThread:2769106 [sender.py:send():380] send: history
+2024-01-10 17:20:12,435 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: summary_record
+2024-01-10 17:20:12,435 INFO    SenderThread:2769106 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-10 17:20:13,379 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:13,379 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/wandb-summary.json
+2024-01-10 17:20:14,379 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:16,380 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:17,283 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:18,380 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:20,381 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:22,382 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:22,790 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:24,382 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:25,701 DEBUG   SenderThread:2769106 [sender.py:send():380] send: stats
+2024-01-10 17:20:26,383 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:26,779 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:20:26,779 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:20:26,779 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:20:28,384 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:28,663 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:30,384 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:32,385 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:33,974 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:34,386 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:36,386 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:38,387 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:39,417 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:40,387 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:41,779 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:20:41,781 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:20:41,783 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:20:42,388 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:44,389 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:44,863 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:46,389 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:48,390 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:48,726 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-10 17:20:48,727 DEBUG   SenderThread:2769106 [sender.py:send():380] send: history
+2024-01-10 17:20:48,727 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: summary_record
+2024-01-10 17:20:48,728 INFO    SenderThread:2769106 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-10 17:20:49,390 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:49,390 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/wandb-summary.json
+2024-01-10 17:20:50,074 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:50,390 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:52,391 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:54,392 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:55,677 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:20:55,702 DEBUG   SenderThread:2769106 [sender.py:send():380] send: stats
+2024-01-10 17:20:56,392 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:20:56,779 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:20:56,779 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:20:56,781 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:20:58,393 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:00,393 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:01,235 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:02,394 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:04,395 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:06,395 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:06,987 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:08,396 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:10,396 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:11,779 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:21:11,779 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:21:11,781 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:21:12,153 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:12,397 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:14,398 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:16,398 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:17,318 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:18,399 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:20,400 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:22,400 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:22,577 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:24,401 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:25,068 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/wandb-metadata.json?Expires=1704964737&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=uuVg60GTd8GdQCheL93vmYHBZEEI9e1d%2Fy%2Fgqe6Qed1ya1Rd6%2Bdtg8Vcoos8i%2BgkDczMJOXYQq9scRydh56nC%2FebwCSU9LQjPdUrqtLn62uj8veLhcwCdy1d%2BrOOj5UDnLw8UYBT46LvKdM183YGml%2FLKlJVkjF37%2FDa%2FUucMf7c3O8%2BQTME46KwCC9RXKEeUd8J4JRi%2FXOl%2FHLKFue4w4OcLdL7CeWDOh%2Fq8In0aVC5yZrBFrWYDG2oICIYCRk067RxRSEoiNikoEhVOu7Xg5pcyKG8dAiSL3ZjSRw8ZgYH3qarF23d2IdDMz2KkHPiJFSIdZ071OVsk7F9ceIHBA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:25,069 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2576'}
+2024-01-10 17:21:25,069 ERROR   wandb-upload_0:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:25,703 DEBUG   SenderThread:2769106 [sender.py:send():380] send: stats
+2024-01-10 17:21:26,411 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:26,682 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-10 17:21:26,682 DEBUG   SenderThread:2769106 [sender.py:send():380] send: history
+2024-01-10 17:21:26,683 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: summary_record
+2024-01-10 17:21:26,684 INFO    SenderThread:2769106 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-10 17:21:26,685 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-10 17:21:26,686 DEBUG   SenderThread:2769106 [sender.py:send():380] send: metric
+2024-01-10 17:21:26,686 DEBUG   SenderThread:2769106 [sender.py:send():380] send: metric
+2024-01-10 17:21:26,686 DEBUG   SenderThread:2769106 [sender.py:send():380] send: metric
+2024-01-10 17:21:26,686 DEBUG   SenderThread:2769106 [sender.py:send():380] send: metric
+2024-01-10 17:21:26,686 DEBUG   SenderThread:2769106 [sender.py:send():380] send: metric
+2024-01-10 17:21:26,687 DEBUG   SenderThread:2769106 [sender.py:send():380] send: history
+2024-01-10 17:21:26,687 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: summary_record
+2024-01-10 17:21:26,687 INFO    SenderThread:2769106 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-10 17:21:26,790 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:21:26,791 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-10 17:21:26,791 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: stop_status
+2024-01-10 17:21:27,402 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:27,402 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/wandb-summary.json
+2024-01-10 17:21:27,572 DEBUG   SenderThread:2769106 [sender.py:send():380] send: exit
+2024-01-10 17:21:27,572 INFO    SenderThread:2769106 [sender.py:send_exit():585] handling exit code: 0
+2024-01-10 17:21:27,572 INFO    SenderThread:2769106 [sender.py:send_exit():587] handling runtime: 151
+2024-01-10 17:21:27,572 INFO    SenderThread:2769106 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-10 17:21:27,572 INFO    SenderThread:2769106 [sender.py:send_exit():593] send defer
+2024-01-10 17:21:27,572 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:27,573 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 0
+2024-01-10 17:21:27,573 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:27,573 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-01-10 17:21:27,573 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 1
+2024-01-10 17:21:27,573 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:27,573 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 1
+2024-01-10 17:21:27,573 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:27,573 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-01-10 17:21:27,573 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 2
+2024-01-10 17:21:27,573 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:27,573 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 2
+2024-01-10 17:21:27,573 INFO    HandlerThread:2769106 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-10 17:21:27,573 INFO    HandlerThread:2769106 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-10 17:21:27,574 INFO    HandlerThread:2769106 [interfaces.py:finish():202] Joined disk monitor
+2024-01-10 17:21:27,574 DEBUG   SystemMonitor:2769106 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-10 17:21:27,574 DEBUG   SystemMonitor:2769106 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-10 17:21:27,912 INFO    HandlerThread:2769106 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-10 17:21:27,912 INFO    HandlerThread:2769106 [interfaces.py:finish():202] Joined memory monitor
+2024-01-10 17:21:27,912 INFO    HandlerThread:2769106 [interfaces.py:finish():202] Joined network monitor
+2024-01-10 17:21:27,912 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-10 17:21:27,912 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:27,913 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-01-10 17:21:27,913 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 3
+2024-01-10 17:21:27,913 DEBUG   SenderThread:2769106 [sender.py:send():380] send: stats
+2024-01-10 17:21:27,913 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: poll_exit
+2024-01-10 17:21:27,913 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:27,913 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 3
+2024-01-10 17:21:27,913 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:27,913 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:27,913 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-01-10 17:21:27,914 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 4
+2024-01-10 17:21:27,914 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:27,914 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 4
+2024-01-10 17:21:27,914 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:27,914 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-01-10 17:21:27,914 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 5
+2024-01-10 17:21:27,914 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:27,914 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 5
+2024-01-10 17:21:27,914 DEBUG   SenderThread:2769106 [sender.py:send():380] send: summary
+2024-01-10 17:21:27,914 INFO    SenderThread:2769106 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-01-10 17:21:27,914 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:27,914 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-01-10 17:21:27,914 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 6
+2024-01-10 17:21:27,915 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:27,915 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 6
+2024-01-10 17:21:27,915 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:27,915 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-01-10 17:21:27,917 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:28,402 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:28,402 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/wandb-summary.json
+2024-01-10 17:21:28,821 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-10 17:21:29,011 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 7
+2024-01-10 17:21:29,011 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: poll_exit
+2024-01-10 17:21:29,012 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:29,022 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 7
+2024-01-10 17:21:29,022 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:29,022 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-01-10 17:21:29,402 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/config.yaml
+2024-01-10 17:21:29,822 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-10 17:21:31,358 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 8
+2024-01-10 17:21:31,358 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: poll_exit
+2024-01-10 17:21:31,358 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:31,358 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 8
+2024-01-10 17:21:31,358 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:31,358 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-01-10 17:21:31,359 INFO    SenderThread:2769106 [job_builder.py:build():281] Attempting to build job artifact
+2024-01-10 17:21:31,359 INFO    SenderThread:2769106 [job_builder.py:_get_source_type():404] no source found
+2024-01-10 17:21:31,359 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 9
+2024-01-10 17:21:31,359 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:31,359 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 9
+2024-01-10 17:21:31,360 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:31,360 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-01-10 17:21:31,360 INFO    SenderThread:2769106 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-10 17:21:31,403 INFO    Thread-12 :2769106 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:31,403 INFO    SenderThread:2769106 [dir_watcher.py:finish():388] scan: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files
+2024-01-10 17:21:31,403 INFO    SenderThread:2769106 [dir_watcher.py:finish():402] scan save: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/wandb-summary.json wandb-summary.json
+2024-01-10 17:21:31,404 INFO    SenderThread:2769106 [dir_watcher.py:finish():402] scan save: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/wandb-metadata.json wandb-metadata.json
+2024-01-10 17:21:31,404 INFO    SenderThread:2769106 [dir_watcher.py:finish():402] scan save: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/requirements.txt requirements.txt
+2024-01-10 17:21:31,405 INFO    SenderThread:2769106 [dir_watcher.py:finish():402] scan save: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/conda-environment.yaml conda-environment.yaml
+2024-01-10 17:21:31,407 INFO    SenderThread:2769106 [dir_watcher.py:finish():402] scan save: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log output.log
+2024-01-10 17:21:31,408 INFO    SenderThread:2769106 [dir_watcher.py:finish():402] scan save: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/config.yaml config.yaml
+2024-01-10 17:21:31,409 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 10
+2024-01-10 17:21:31,409 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:21:31,410 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 10
+2024-01-10 17:21:31,411 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:21:31,411 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-01-10 17:21:31,411 INFO    SenderThread:2769106 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-10 17:21:31,824 ERROR   wandb-upload_1:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/wandb-summary.json?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=UeqNij6SKZDFzVpXXuXCtIMCRlwzRiuq81Ch2SxXWblZmNMRj%2F%2BPXwOKeFtIF8CsVpQoi45vqKU3Jv1uBXDbzSBuUJ%2F48U7mYvoCdmLo1q5xum7%2F1fvOWi98RMD%2FrLO4SQtc9uJiP2CCmNHLhAUyYAK%2BhA4XpkWi%2Bc6XaIygXU35OiE0%2Bbs%2BcuxOWqMQCaXc3Jw4JkmXAhIaCxyBmfdkskk2mDY9mHyy227rmfsJe30xZ5L0ru7HlUjfNO5VaRsG62n8f5XhsitJNw1Tbhtd8YHpzYR3spkj8rCic76E43Z8Br3b6IZ33ExJge4aAZiiWrKXdVvqRA6LiaZq%2B0hPAA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:31,824 ERROR   wandb-upload_1:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '412'}
+2024-01-10 17:21:31,824 ERROR   wandb-upload_1:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:32,080 ERROR   wandb-upload_2:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/requirements.txt?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=M%2FrjPnGVGGvIUSHNXTNED5CmhEgfKH8HRTa%2BuAEYhyqkdq58qHM6u3mHKzLfV311eITW%2Bm1jg0OmuVUmBs98eGI2QWdnRD7wC5A%2FdJY%2Fe7TUrEXAh0Uj87hCP4%2BaNYq80Uih7xabDX3pI0UBXMAomTN2OmriYP%2BArnojaaXcli2OCP5FZoaYZaFdb8KQveMc708NEHfRXZXFU2O6pr0RrrtVUMgMMkWHnktBdNUPTKNf%2BD9ZzLR%2FT%2B6bL%2FCAUP%2B3LTNr9U4%2Blr9HpluxmYuLiqnXzEHZ%2FOg70aUrbQtpjISW7gAB9uq63snWWXS6vb2A5Krim3viFUwnIVMMgCkvJw%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:32,080 ERROR   wandb-upload_2:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '5737'}
+2024-01-10 17:21:32,080 ERROR   wandb-upload_2:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:32,086 ERROR   wandb-upload_5:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/config.yaml?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=vPSEZVNuk1ga5s%2Bz3edsllzr5cvj1pjEZKbgo7729%2F6bkruO6%2FEJ7fNFSxnlbuiM8Rwjz4eQbCnBnpfzFxuYpHFUZD67kZgNJVTdDxWFGt8R38la76Hpz052PKh31yu5GJqFZdtZ8qcOwhp29RrBAPwhPuVzGVka2EqMjAOEn80akTiuErjR3mFsEbABqsKVH%2BnahW94qoThLmiB2NBtBL%2Fy9WNgnNrmKIPWk45j3EGsh46%2BNp5lTDys1h6R4s7JfrGgnZwNjfo9EtZmoSm2AqJIYhbv3hrnDfvYBpr1C%2Fa0gxs0uMIzQDNoorN9y%2FLfRFggOMZPk3D0s9WGQ%2FtGeQ%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:32,086 ERROR   wandb-upload_5:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '10332'}
+2024-01-10 17:21:32,086 ERROR   wandb-upload_5:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:32,161 ERROR   wandb-upload_4:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/output.log?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=Qd9vlwKMjxYcDCpaJaLY6toUvKDOl71LE1ywP8jigUAiioE0BlxZIRLHKbYYDEe4Uy%2Fq4ksXqEgtG8TCUm1BxJjU%2FeM4OWIU2juLcq0Et9YQZvV%2BFMAlwTXJwWf7ruQ7a28bgxnyGL4uLIDDke9usNdB9TX6p6vXtNKympRCGvAMD7ORONSePJSrAuVK79rlQ57vL9LPfVUWPAoueyM5QES57vYklANoh%2FqkVDx4tlCyWkkNIlWZd481f0bl1udYwiXSRWP06nLLPWGjpKrwLIM6V%2BnBRivRqctHmFAMZH5W8aRXUUe8QDGIvb1tZZRM%2BJHga9CsJXdM4PuakwYUhw%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:32,161 ERROR   wandb-upload_4:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2599'}
+2024-01-10 17:21:32,161 ERROR   wandb-upload_4:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:32,171 ERROR   wandb-upload_3:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/conda-environment.yaml?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=KY3GaSDQRoGISyaq1wBir%2BSDXcP00vtQU5BgM6jzMOgqot3DRFATjthRhw9vpBeMOdqsS27nUM2vpu%2FPs6Z2HmZvNL3XZz8xMpHC7OIR5rtPMpJj6Gz%2FkkJzsPyrzoeyumsGumEG72IcXPUO5y6JhuEWaIHMKACiTqBXWai78uaoAD6aOCnb6h9qXBiZxaz0s5w5nhjbLwgaeeJULRjTm72z25InYnoSPjAp%2BVrJvBqBPfxKfNS7dxoFZJAve2yyeyQJIOSWFEtkACIn9%2FFSbXngbR8kxqsL%2FTpUUl2EnLqa9dBI%2B5seAXjMBt%2FNOhQVjrx1K2TCSxNnNu38bMYJSA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:32,171 ERROR   wandb-upload_3:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '260'}
+2024-01-10 17:21:32,171 ERROR   wandb-upload_3:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:33,010 ERROR   wandb-upload_1:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/wandb-summary.json?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=UeqNij6SKZDFzVpXXuXCtIMCRlwzRiuq81Ch2SxXWblZmNMRj%2F%2BPXwOKeFtIF8CsVpQoi45vqKU3Jv1uBXDbzSBuUJ%2F48U7mYvoCdmLo1q5xum7%2F1fvOWi98RMD%2FrLO4SQtc9uJiP2CCmNHLhAUyYAK%2BhA4XpkWi%2Bc6XaIygXU35OiE0%2Bbs%2BcuxOWqMQCaXc3Jw4JkmXAhIaCxyBmfdkskk2mDY9mHyy227rmfsJe30xZ5L0ru7HlUjfNO5VaRsG62n8f5XhsitJNw1Tbhtd8YHpzYR3spkj8rCic76E43Z8Br3b6IZ33ExJge4aAZiiWrKXdVvqRA6LiaZq%2B0hPAA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:33,011 ERROR   wandb-upload_1:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '412'}
+2024-01-10 17:21:33,011 ERROR   wandb-upload_1:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:33,185 ERROR   wandb-upload_2:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/requirements.txt?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=M%2FrjPnGVGGvIUSHNXTNED5CmhEgfKH8HRTa%2BuAEYhyqkdq58qHM6u3mHKzLfV311eITW%2Bm1jg0OmuVUmBs98eGI2QWdnRD7wC5A%2FdJY%2Fe7TUrEXAh0Uj87hCP4%2BaNYq80Uih7xabDX3pI0UBXMAomTN2OmriYP%2BArnojaaXcli2OCP5FZoaYZaFdb8KQveMc708NEHfRXZXFU2O6pr0RrrtVUMgMMkWHnktBdNUPTKNf%2BD9ZzLR%2FT%2B6bL%2FCAUP%2B3LTNr9U4%2Blr9HpluxmYuLiqnXzEHZ%2FOg70aUrbQtpjISW7gAB9uq63snWWXS6vb2A5Krim3viFUwnIVMMgCkvJw%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:33,185 ERROR   wandb-upload_2:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '5737'}
+2024-01-10 17:21:33,185 ERROR   wandb-upload_2:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:33,188 ERROR   wandb-upload_5:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/config.yaml?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=vPSEZVNuk1ga5s%2Bz3edsllzr5cvj1pjEZKbgo7729%2F6bkruO6%2FEJ7fNFSxnlbuiM8Rwjz4eQbCnBnpfzFxuYpHFUZD67kZgNJVTdDxWFGt8R38la76Hpz052PKh31yu5GJqFZdtZ8qcOwhp29RrBAPwhPuVzGVka2EqMjAOEn80akTiuErjR3mFsEbABqsKVH%2BnahW94qoThLmiB2NBtBL%2Fy9WNgnNrmKIPWk45j3EGsh46%2BNp5lTDys1h6R4s7JfrGgnZwNjfo9EtZmoSm2AqJIYhbv3hrnDfvYBpr1C%2Fa0gxs0uMIzQDNoorN9y%2FLfRFggOMZPk3D0s9WGQ%2FtGeQ%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:33,188 ERROR   wandb-upload_5:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '10332'}
+2024-01-10 17:21:33,188 ERROR   wandb-upload_5:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:33,343 ERROR   wandb-upload_3:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/conda-environment.yaml?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=KY3GaSDQRoGISyaq1wBir%2BSDXcP00vtQU5BgM6jzMOgqot3DRFATjthRhw9vpBeMOdqsS27nUM2vpu%2FPs6Z2HmZvNL3XZz8xMpHC7OIR5rtPMpJj6Gz%2FkkJzsPyrzoeyumsGumEG72IcXPUO5y6JhuEWaIHMKACiTqBXWai78uaoAD6aOCnb6h9qXBiZxaz0s5w5nhjbLwgaeeJULRjTm72z25InYnoSPjAp%2BVrJvBqBPfxKfNS7dxoFZJAve2yyeyQJIOSWFEtkACIn9%2FFSbXngbR8kxqsL%2FTpUUl2EnLqa9dBI%2B5seAXjMBt%2FNOhQVjrx1K2TCSxNnNu38bMYJSA%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:33,344 ERROR   wandb-upload_3:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '260'}
+2024-01-10 17:21:33,344 ERROR   wandb-upload_3:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:33,411 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:33,452 ERROR   wandb-upload_4:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/output.log?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=Qd9vlwKMjxYcDCpaJaLY6toUvKDOl71LE1ywP8jigUAiioE0BlxZIRLHKbYYDEe4Uy%2Fq4ksXqEgtG8TCUm1BxJjU%2FeM4OWIU2juLcq0Et9YQZvV%2BFMAlwTXJwWf7ruQ7a28bgxnyGL4uLIDDke9usNdB9TX6p6vXtNKympRCGvAMD7ORONSePJSrAuVK79rlQ57vL9LPfVUWPAoueyM5QES57vYklANoh%2FqkVDx4tlCyWkkNIlWZd481f0bl1udYwiXSRWP06nLLPWGjpKrwLIM6V%2BnBRivRqctHmFAMZH5W8aRXUUe8QDGIvb1tZZRM%2BJHga9CsJXdM4PuakwYUhw%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:33,452 ERROR   wandb-upload_4:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2599'}
+2024-01-10 17:21:33,452 ERROR   wandb-upload_4:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:34,824 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:21:35,464 INFO    wandb-upload_1:2769106 [upload_job.py:push():131] Uploaded file /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/wandb-summary.json
+2024-01-10 17:21:35,512 ERROR   wandb-upload_2:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/requirements.txt?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=M%2FrjPnGVGGvIUSHNXTNED5CmhEgfKH8HRTa%2BuAEYhyqkdq58qHM6u3mHKzLfV311eITW%2Bm1jg0OmuVUmBs98eGI2QWdnRD7wC5A%2FdJY%2Fe7TUrEXAh0Uj87hCP4%2BaNYq80Uih7xabDX3pI0UBXMAomTN2OmriYP%2BArnojaaXcli2OCP5FZoaYZaFdb8KQveMc708NEHfRXZXFU2O6pr0RrrtVUMgMMkWHnktBdNUPTKNf%2BD9ZzLR%2FT%2B6bL%2FCAUP%2B3LTNr9U4%2Blr9HpluxmYuLiqnXzEHZ%2FOg70aUrbQtpjISW7gAB9uq63snWWXS6vb2A5Krim3viFUwnIVMMgCkvJw%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:35,512 ERROR   wandb-upload_2:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '5737'}
+2024-01-10 17:21:35,512 ERROR   wandb-upload_2:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:35,704 ERROR   wandb-upload_4:2769106 [internal_api.py:upload_file():2556] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/520/huggingface/bqb5ymem/output.log?Expires=1704964891&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=Qd9vlwKMjxYcDCpaJaLY6toUvKDOl71LE1ywP8jigUAiioE0BlxZIRLHKbYYDEe4Uy%2Fq4ksXqEgtG8TCUm1BxJjU%2FeM4OWIU2juLcq0Et9YQZvV%2BFMAlwTXJwWf7ruQ7a28bgxnyGL4uLIDDke9usNdB9TX6p6vXtNKympRCGvAMD7ORONSePJSrAuVK79rlQ57vL9LPfVUWPAoueyM5QES57vYklANoh%2FqkVDx4tlCyWkkNIlWZd481f0bl1udYwiXSRWP06nLLPWGjpKrwLIM6V%2BnBRivRqctHmFAMZH5W8aRXUUe8QDGIvb1tZZRM%2BJHga9CsJXdM4PuakwYUhw%3D%3D: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2024-01-10 17:21:35,704 ERROR   wandb-upload_4:2769106 [internal_api.py:upload_file():2558] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2599'}
+2024-01-10 17:21:35,704 ERROR   wandb-upload_4:2769106 [internal_api.py:upload_file():2560] upload_file response body: 
+2024-01-10 17:21:35,914 INFO    wandb-upload_5:2769106 [upload_job.py:push():131] Uploaded file /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/config.yaml
+2024-01-10 17:21:36,189 INFO    wandb-upload_3:2769106 [upload_job.py:push():131] Uploaded file /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/conda-environment.yaml
+2024-01-10 17:21:38,412 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:39,826 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:21:40,418 INFO    wandb-upload_2:2769106 [upload_job.py:push():131] Uploaded file /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/requirements.txt
+2024-01-10 17:21:40,820 INFO    wandb-upload_4:2769106 [upload_job.py:push():131] Uploaded file /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/files/output.log
+2024-01-10 17:21:43,416 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:44,828 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:21:48,416 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:49,830 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:21:53,417 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:54,832 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:21:58,418 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:21:59,834 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:03,419 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:04,842 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:08,420 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:09,844 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:13,420 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:14,846 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:18,421 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:19,848 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:23,422 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:24,850 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:28,427 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:29,852 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:33,427 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:34,854 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:38,428 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:39,857 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:43,429 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:44,859 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:48,430 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:49,861 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:53,430 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:54,863 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:22:58,431 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:22:59,865 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:03,432 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:23:04,867 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:08,435 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:23:09,870 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:13,436 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:23:14,872 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:18,437 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:23:19,874 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:23,438 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:23:24,876 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:28,439 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:23:29,878 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:33,439 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:23:34,881 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:38,440 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:23:39,883 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:43,441 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:23:44,884 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:48,441 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: status_report
+2024-01-10 17:23:49,887 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-10 17:23:51,150 INFO    wandb-upload_0:2769106 [upload_job.py:push():131] Uploaded file /tmp/tmp98zvw1ypwandb/wz35ree5-wandb-metadata.json
+2024-01-10 17:23:51,350 INFO    Thread-11 :2769106 [sender.py:transition_state():613] send defer: 11
+2024-01-10 17:23:51,351 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:23:51,351 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 11
+2024-01-10 17:23:51,351 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:23:51,351 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-01-10 17:23:51,351 INFO    SenderThread:2769106 [file_pusher.py:join():181] waiting for file pusher
+2024-01-10 17:23:51,351 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 12
+2024-01-10 17:23:51,351 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:23:51,352 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 12
+2024-01-10 17:23:51,352 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:23:51,352 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-01-10 17:23:51,352 INFO    SenderThread:2769106 [file_stream.py:finish():595] file stream finish called
+2024-01-10 17:23:51,595 INFO    SenderThread:2769106 [file_stream.py:finish():599] file stream finish is done
+2024-01-10 17:23:51,595 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 13
+2024-01-10 17:23:51,595 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:23:51,595 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 13
+2024-01-10 17:23:51,595 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:23:51,595 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-01-10 17:23:51,595 INFO    SenderThread:2769106 [sender.py:transition_state():613] send defer: 14
+2024-01-10 17:23:51,595 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: defer
+2024-01-10 17:23:51,596 INFO    HandlerThread:2769106 [handler.py:handle_request_defer():172] handle defer: 14
+2024-01-10 17:23:51,596 DEBUG   SenderThread:2769106 [sender.py:send():380] send: final
+2024-01-10 17:23:51,596 DEBUG   SenderThread:2769106 [sender.py:send():380] send: footer
+2024-01-10 17:23:51,596 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: defer
+2024-01-10 17:23:51,596 INFO    SenderThread:2769106 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-01-10 17:23:51,596 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-10 17:23:51,597 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: server_info
+2024-01-10 17:23:51,597 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: get_summary
+2024-01-10 17:23:51,597 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: sampled_history
+2024-01-10 17:23:51,597 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-10 17:23:51,597 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: poll_exit
+2024-01-10 17:23:51,597 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: server_info
+2024-01-10 17:23:51,599 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: job_info
+2024-01-10 17:23:51,916 DEBUG   SenderThread:2769106 [sender.py:send_request():407] send_request: job_info
+2024-01-10 17:23:51,916 INFO    MainThread:2769106 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2024-01-10 17:23:51,917 INFO    MainThread:2769106 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2024-01-10 17:23:51,917 INFO    MainThread:2769106 [wandb_run.py:_footer_sync_info():3558] logging synced files
+2024-01-10 17:23:51,917 DEBUG   HandlerThread:2769106 [handler.py:handle_request():146] handle_request: shutdown
+2024-01-10 17:23:51,917 INFO    HandlerThread:2769106 [handler.py:finish():866] shutting down handler
+2024-01-10 17:23:52,600 INFO    WriterThread:2769106 [datastore.py:close():294] close: /home/shangjian/code/Research/Multimodal & LLM/SLM/wandb/run-20240110_171854-bqb5ymem/run-bqb5ymem.wandb
+2024-01-10 17:23:52,916 INFO    SenderThread:2769106 [sender.py:finish():1534] shutting down sender
+2024-01-10 17:23:52,916 INFO    SenderThread:2769106 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-10 17:23:52,917 INFO    SenderThread:2769106 [file_pusher.py:join():181] waiting for file pusher

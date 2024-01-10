@@ -1,0 +1,115 @@
+{
+    "os": "Linux-5.15.0-46-generic-x86_64-with-glibc2.17",
+    "python": "3.8.13",
+    "heartbeatAt": "2024-01-10T10:50:28.869477",
+    "startedAt": "2024-01-10T10:50:26.995154",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "-bs",
+        "16"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePathLocal": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": null,
+        "commit": "18c7fe0993c97a9f7a0f2252b6f7c1dee73e5c87"
+    },
+    "email": "none",
+    "root": "/home/shangjian/code/Research/Multimodal & LLM/SLM",
+    "host": "scau540-Song",
+    "username": "shangjian",
+    "executable": "/home/shangjian/miniconda3/envs/pro/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 3.602749999999999,
+        "min": 2200.0,
+        "max": 3500.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4.41,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 4.38,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 4.303,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 4.38,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 4.38,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 4.38,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.2,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.5,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 3.5,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.2,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.8,
+            "min": 2200.0,
+            "max": 3500.0
+        },
+        {
+            "current": 2.8,
+            "min": 2200.0,
+            "max": 3500.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 5498.824867248535,
+            "used": 2542.2590560913086
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3090",
+            "memory_total": 25769803776
+        },
+        {
+            "name": "NVIDIA GeForce RTX 3090",
+            "memory_total": 25769803776
+        }
+    ],
+    "memory": {
+        "total": 62.7276725769043
+    }
+}
