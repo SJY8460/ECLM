@@ -1,0 +1,33 @@
+
+You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Asking to truncate to max_length but no maximum length is provided and the model has no predefined maximum length. Default to no truncation.
+/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/transformers/generation/utils.py:1518: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use and modify the model generation configuration (see https://huggingface.co/docs/transformers/generation_strategies#default-text-generation-configuration )
+  warnings.warn(
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: list california airports , list la and how many canadian airlines international flights use aircraft 320
+[Response]
+intent: list_airports, list_aircraft
+entity_slots: {'aircraft': '320', 'airports': 'california', 'aircraft_type': 'aircraft', 'aircraft_model': '320', 'aircraft_manufacturer': 'aircraft', 'aircraft_model_number': '320', 'aircraft_model_name': 'aircraft', 'aircraft_model_number_name': 'aircraft', 'aircraft_model_number_name_number': '320', 'aircraft_model_number_name_number_name': 'aircraft', 'aircraft_model_number_name_number_name_number': '320', 'aircraft_model_name_number': '320', 'aircraft_model_name_number_name': 'aircraft
+-------------------- [] {}
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: i need a ticket from nashville to seattle and then flight numbers from chicago to seattle on continental
+[Response]
+intent: travel_booking
+entity_slots: {'from_location#city': 'nashville', 'to_location#city': 'seattle', 'airline#name': 'continental'}
+intent_name: travel_booking
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: i need a ticket from nashville to seattle and then flight numbers from chicago to seattle on continental
+[Response]
+intent: travel_booking
+entity_slots: {'from_location#city': 'nashville', 'to_location#city': 'seattle', 'airline#name': 'continental'}
+intent_name: travel_booking
+[Instruction]
+you are an

@@ -1,0 +1,221 @@
+
+You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Checkpoint destination directory ./save/SFT/Mistral-7B-Instruct-v0.1/checkpoint-200 already exists and is non-empty.Saving will proceed but saved results may be invalid.
+Asking to truncate to max_length but no maximum length is provided and the model has no predefined maximum length. Default to no truncation.
+/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/transformers/generation/utils.py:1518: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use and modify the model generation configuration (see https://huggingface.co/docs/transformers/generation_strategies#default-text-generation-configuration )
+  warnings.warn(
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: list california airports , list la and how many canadian airlines international flights use aircraft 320
+[Response]
+intent: list_airports
+entity_slot: {'airport_name': 'california airports', 'aircraft_type': 'aircraft 320', 'airline_name': 'canadian airlines', 'airline_
+-------------------- ['list_airports'] {}
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: i need a ticket from nashville to seattle and then flight numbers from chicago to seattle on continental
+[Response]
+intent: travel_booking
+entity_slot: {'from_city': 'nashville', 'to_city': 'seattle', 'airline': 'continental'}
+intent_name: travel_booking
+slot: {'from_city
+-------------------- ['travel_booking'] {'from_city': 'nashville', 'to_city': 'seattle', 'airline': 'continental'}
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: what cities does northwest fly to
+[Response]
+intent: flight_info
+entity_slot: {'airline': 'northwest', 'city': 'fly to'}
+intent_name: flight_info
+slot_name: city
+slot_value: fly to
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and
+-------------------- ['flight_info'] {'airline': 'northwest', 'city': 'fly to'}
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: show me the cheapest round trip fares from san francisco to houston and then how many passengers can an l1011 aircraft hold
+[Response]
+intent: atis_fare#atis_aircraft_capacity
+entity_slot: {'aircraft_type': 'l1011'}
+intent_name: atis_fare
+slot_name: aircraft_
+-------------------- ['atis_fare', 'atis_aircraft_capacity'] {'aircraft_type': 'l1011'}
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: what cities does northwest fly to and list the distance in miles from san francisco international airport to san francisco downtown
+[Response]
+intent: list_distance
+entity_slot: {'airport_city': 'san francisco', 'destination_city': 'downtown', 'airline': 'northwest'}
+[Instruction]
+you are an expert
+-------------------- ['list_distance'] {'airport_city': 'san francisco', 'destination_city': 'downtown', 'airline': 'northwest'}
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: tell me about the m80 aircraft , list airports and then how many canadian airlines flights use aircraft dh8
+[Response]
+intent: list_aircraft_airports
+entity_slot: {'aircraft': 'm80', 'airport': 'dh8'}
+intent_name: list_aircraft_airports
+slot_name: aircraft,air
+-------------------- ['list_aircraft_airports'] {'aircraft': 'm80', 'airport': 'dh8'}
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: what day of the week do flights from nashville to tacoma fly on and also flight number from houston to dallas
+[Response]
+intent: flight_schedule
+entity_slot: {'day_of_week': 'monday', 'flight_number': 'flight number'}
+intent_name: flight_schedule
+slot_name: day_of_week
+-------------------- ['flight_schedule'] {'day_of_week': 'monday', 'flight_number': 'flight number'}
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: how much is limousine service in los angeles
+[Response]
+intent: limousine_service
+entity_slot: {'city': 'los angeles'}
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: what is the cost
+-------------------- ['limousine_service'] {'city': 'los angeles'}
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: list la , list ground transportation in baltimore and what meals are available on dl 468 which al arrives in san francisco at 950 am
+[Response]
+intent: list_service
+entity_slot: {'service_type': 'ground transportation', 'location_name': 'baltimore', 'aircraft_number': 'dl 468', 'air
+-------------------- ['list_service'] {}
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: what cities does northwest fly to and how many canadian airlines international flights use j31
+[Response]
+intent: flight_info
+entity_slot: {'airline_name': 'northwest', 'city': 'canadian airlines', 'flight_number': 'j31', 'airline_type': 'international', 'airline_country
+-------------------- ['flight_info'] {}
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+[['list_airports'], ['travel_booking'], ['flight_info'], ['atis_fare', 'atis_aircraft_capacity'], ['list_distance'], ['list_aircraft_airports'], ['flight_schedule'], ['limousine_service'], ['list_service'], ['flight_info']]
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+[['atis_airport', 'atis_city', 'atis_quantity'], ['atis_airfare', 'atis_flight_no'], ['atis_city'], ['atis_airfare', 'atis_capacity'], ['atis_city', 'atis_distance'], ['atis_aircraft', 'atis_airport', 'atis_quantity'], ['atis_day_name', 'atis_flight_no'], ['atis_ground_fare'], ['atis_city', 'atis_ground_service', 'atis_meal'], ['atis_city', 'atis_quantity']]
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+[['list_airports'], ['travel_booking'], ['flight_info'], ['atis_fare', 'atis_aircraft_capacity'], ['list_distance'], ['list_aircraft_airports'], ['flight_schedule'], ['limousine_service'], ['list_service'], ['flight_info']]
+[['atis_airport', 'atis_city', 'atis_quantity'], ['atis_airfare', 'atis_flight_no'], ['atis_city'], ['atis_airfare', 'atis_capacity'], ['atis_city', 'atis_distance'], ['atis_aircraft', 'atis_airport', 'atis_quantity'], ['atis_day_name', 'atis_flight_no'], ['atis_ground_fare'], ['atis_city', 'atis_ground_service', 'atis_meal'], ['atis_city', 'atis_quantity']]
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+['O', 'B-state_name', 'O', 'O', 'O', 'B-city_name', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name', 'I-airline_name', 'O', 'O', 'O', 'B-aircraft_code']
+['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O']
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+['O', 'O', 'O', 'B-airline_name', 'O', 'O']
+['O', 'O', 'O', 'B-airline', 'B-city', 'I-city']
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+['O', 'O', 'O', 'B-cost_relative', 'B-round_trip', 'I-round_trip', 'O', 'O', 'B-fromloc.city_name', 'I-fromloc.city_name', 'O', 'B-toloc.city_name', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-aircraft_code', 'O', 'O']
+['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-aircraft_type', 'O', 'O']
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+['O', 'O', 'O', 'B-airline_name', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-toloc.city_name', 'I-toloc.city_name', 'I-fromloc.airport_name', 'I-fromloc.airport_name', 'O', 'O', 'O', 'O']
+['O', 'O', 'O', 'B-airline', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'O', 'B-airport_city', 'I-airport_city', 'O', 'O', 'O', 'O', 'O', 'B-destination_city']
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+['list_distance']
+['atis_city', 'atis_distance']
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+['travel_booking']
+['atis_airfare', 'atis_flight_no']
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+['travel_booking']
+['atis_airfare', 'atis_flight_no']
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: what cities does northwest fly to and how many canadian airlines international flights use j31
+[Response]
+intent: flight_info
+entity_slot: {'airline_name': 'northwest', 'city': 'canadian airlines', 'flight_number': 'j31', 'airline_type': 'international', 'airline_country
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+['flight_info']
+['atis_city']
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: what cities does northwest fly to and how many canadian airlines international flights use j31
+[Response]
+intent: flight_info
+entity_slot: {'airline_name': 'northwest', 'city': 'canadian airlines', 'flight_number': 'j31', 'airline_type': 'international', 'airline_country
+Asking to truncate to max_length but no maximum length is provided and the model has no predefined maximum length. Default to no truncation.
+/home/shangjian/miniconda3/envs/pro/lib/python3.8/site-packages/transformers/generation/utils.py:1518: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use and modify the model generation configuration (see https://huggingface.co/docs/transformers/generation_strategies#default-text-generation-configuration )
+  warnings.warn(
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: list california airports , list la and how many canadian airlines international flights use aircraft 320
+[Response]
+intent: list_airports
+entity_slot: {'airport_name': 'california airports', 'aircraft_type': 'aircraft 320', 'airline_name': 'canadian airlines', 'airline_intent': 'international flights'}
+intent_name: list_airports
+slot_filling: {'airport_name': 'california airports', 'aircraft_type': 'aircraft 320', 'airline_name': 'canadian airlines', 'airline_intent': 'international flights'}
+-------------------- ['list_airports'] {'airport_name': 'california airports', 'aircraft_type': 'aircraft 320', 'airline_name': 'canadian airlines', 'airline_intent': 'international flights'}
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+[['O', 'B-state_name', 'O', 'O', 'O', 'B-city_name', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name', 'I-airline_name', 'O', 'O', 'O', 'B-aircraft_code']]
+[['O', 'B-airport_name', 'I-airport_name', 'O', 'O', 'O', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name', 'B-airline_intent', 'I-airline_intent', 'O', 'B-aircraft_type', 'I-aircraft_type']]
+Intent Accuracy: 0.0
+Slot_Score(f1, precision, recall): (0, 0.0, 0.0)
+Semantic Accuracy: 0.0
+[Instruction]
+you are an expert of spoken language understanding, I need you to perform intent detection and slot filling for given utterance.
+[Input]
+utterance: list california airports , list la and how many canadian airlines international flights use aircraft 320
+[Response]
+intent: list_airports
+entity_slot: {'airport_name': 'california airports', 'aircraft_type': 'aircraft 320', 'airline_name': 'canadian airlines', 'airline_intent': 'international flights'}
+intent_name: list_airports
+slot_filling: {'airport_name': 'california airports', 'aircraft_type': 'aircraft 320', 'airline_name': 'canadian airlines', 'airline_intent': 'international flights'}
+[['O', 'B-state_name', 'O', 'O', 'O', 'B-city_name', 'O', 'O', 'O', 'B-airline_name', 'I-airline_name', 'I-airline_name', 'O', 'O', 'O', 'B-aircraft_code']]
