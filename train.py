@@ -11,8 +11,6 @@ import torch
 
 def train(model_id, peft_path, train_file, val_file, save_dir, batch_size, max_steps, learning_rate,template_type):
     
-
-        
     tokenizer = AutoTokenizer.from_pretrained(model_id,trust_remote_code=True)
     if 'chatglm' not in model_id.lower() and 'baichuan2' not in model_id.lower():
         tokenizer.pad_token = tokenizer.eos_token
@@ -42,7 +40,7 @@ def train(model_id, peft_path, train_file, val_file, save_dir, batch_size, max_s
         model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, trust_remote_code=True,device_map='auto')
         
     training_args = TrainingArguments(
-        output_dir=save_dir + "/SFT/{}".format(model_id.split('/')[-1]), 
+        output_dir=save_dir + "/SFT/{}".format(model_id.split('/')[-1]+'_{}'.format(template_type)), 
         per_device_train_batch_size=batch_size,
         learning_rate=learning_rate,
         logging_steps=50,
@@ -51,7 +49,7 @@ def train(model_id, peft_path, train_file, val_file, save_dir, batch_size, max_s
         max_steps=int(len(train_dataset['train'])/ batch_size),
         optim="paged_adamw_8bit",
         fp16=True,
-        run_name=f"baseline-{model_id.split('/')[-1]}",
+        run_name=f"baseline-{model_id.split('/')[-1]+'_{}'.format(template_type)}",
         remove_unused_columns=False,
         report_to="wandb"
     )

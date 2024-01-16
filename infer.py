@@ -40,7 +40,7 @@ def infer_and_evaluate(test_dataset, test_template, model, tokenizer,generation_
                 true_bio_slots = convert_dict_to_slots(true_slots, test_dataset["train"][i+idx]['utterance'])
                 
                 # supervising
-                if(i % 10 == 0 and idx == 0):
+                if(i % 5 == 0 and idx == infer_batch_size-1):
                     print("Utterance:")
                     print(utterance0)
                     print(utterance1)
@@ -115,6 +115,9 @@ if __name__ == "__main__":
         "Slot Score (F1, Precision, Recall)": slot_score,
         "Semantic Accuracy": semantic_accuracy
     }
+    
+    dataset_name = args.data_file.split('/')[-2]
+    save_directory = f'./save/result/{dataset_name}/'
 
-    save_results(args.model_id, args.checkpoint_num, results)
+    save_results(args.model_id, args.checkpoint_num, results,save_directory)
     print(f"Results saved in {args.model_id.split('/')[-1]}_checkpoint_{args.checkpoint_num}_results.txt")

@@ -34,7 +34,7 @@ def parse_generated_text(generated_text):
         slots_str = entity_slots_match.group(1)
         for slot_str in slots_str.split(', '):
             if ':' in slot_str:
-                key, value = slot_str.split(': ')
+                key, value = slot_str.split(': ',1)
                 entity_slots[key.strip("'")] = value.strip("'")
 
     # 提取utterance
