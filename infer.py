@@ -5,7 +5,7 @@ from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, GenerationConfig
 from peft import PeftModel
 from tqdm import tqdm
-from Prompt import test_template,data_template
+from Prompt import test_template,data_template,data_template_sub
 from utils import parse_generated_text, convert_dict_to_slots, get_multi_acc, computeF1Score, semantic_acc,format_text
 from langchain.prompts import PromptTemplate
 
@@ -28,7 +28,7 @@ def infer_and_evaluate(test_dataset, test_template, model, tokenizer,generation_
     with torch.no_grad():
         for i in tqdm(range(0, len(test_dataset["train"]), infer_batch_size), desc="Processing"):
             prompts = texts[i:i + infer_batch_size]
-            model_inputs = tokenizer(prompts, return_tensors="pt", padding=True, truncation=True).to(model.device)
+            model_inputs = tokenizer(prompts, return_tensors="pt", padding=True).to(model.device)
             generation_outputs = model.generate(**model_inputs,generation_config = generation_config, max_length=256, return_dict_in_generate=True, 
                output_scores=False, pad_token_id=tokenizer.eos_token_id).sequences.cpu()
             
@@ -75,6 +75,8 @@ if __name__ == "__main__":
     parser.add_argument("--top_p", type=float, default=0.75, help="Top p for nucleus sampling")
     parser.add_argument("--top_k", type=int, default=40, help="Top k for generation")
     parser.add_argument("--num_beams", type=int, default=1, help="Number of beams for beam search")
+    parser.add_argument("--template_type", type=str, choices=["default", "sub"], default="default", help="Type of data template to use ('default' or 'sub')")
+    
     # parser.add_argument("--do_sample", action="store_true", help="Whether to use sampling; use greedy decoding if not set")
     args = parser.parse_args()
 
@@ -96,7 +98,10 @@ if __name__ == "__main__":
     model, tokenizer = load_model(args.model_id, args.peft_path, bnb_config)
     test_dataset = load_dataset('json', data_files= args.data_file)
     
-    prompt = PromptTemplate(template=data_template, input_variables=['utterance' 'intent' 'entity_slots'])
+    if args.template_type == "sub":
+        prompt = PromptTemplate(template=data_template_sub, input_variables=['utterance' 'sub_utterance' 'intent' 'entity_slots'])
+    else:
+        prompt = PromptTemplate(template=data_template, input_variables=['utterance' 'intent' 'entity_slots'])
     
     test_dataset = test_dataset.map(lambda x: {"formatted_text": format_text(x, template=prompt)})
     print("test_dataset_example: \n" , test_dataset['train']['formatted_text'][0])

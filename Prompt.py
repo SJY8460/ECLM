@@ -17,9 +17,10 @@ you are an expert of spoken language understanding, I need you to perform intent
 
 [Input]
 utterance: {utterance} 
-sub_utterance: {sub_utterance} 
+
 
 [Response]
+sub_utterance: {sub_utterance} 
 intent: {intent}
 entity_slot: {entity_slots}
 """

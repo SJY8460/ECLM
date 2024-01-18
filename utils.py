@@ -8,13 +8,13 @@ def format_text(example, template):
 def format_text_sub(example,template,is_train=True):
     if is_train:
         return template.format(utterance=example['utterance'], 
-                                   sub_sentence={k: v for k, v in example['sub_utterance'].items() if v is not None},
+                                   sub_utterance={k: v for k, v in example['sub_utterance'].items() if v is not None},
                                    intent=example['intent(s)'],
                                    entity_slots={k: v for k, v in example['entity_slots'].items() if v is not None})
     else:
         return template.format(utterance=example['utterance'], 
                                   intent=example['intent(s)'],
-                                  sub_sentence = "None",
+                                  sub_utterance = "None",
                                   entity_slots={k: v for k, v in example['entity_slots'].items() if v is not None})
 
 def parse_generated_text(generated_text):

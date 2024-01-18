@@ -5,7 +5,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from trl import SFTTrainer
 from peft import LoraConfig
 from langchain.prompts import PromptTemplate
-from utils import format_text
+from utils import format_text,format_text_sub
 from Prompt import data_template, test_template,data_template_sub
 import torch
 
@@ -26,8 +26,8 @@ def train(model_id, peft_path, train_file, val_file, save_dir, batch_size, max_s
         val_dataset = val_dataset.map(lambda x: {"formatted_text": format_text(x, template=prompt)})
     else:
         prompt = PromptTemplate(template=data_template_sub, input_variables=['utterance' 'sub_utterance' 'intent' 'entity_slots'])
-        train_dataset = train_dataset.map(lambda x: {"formatted_text": format_text(x, template=prompt)})
-        val_dataset = val_dataset.map(lambda x: {"formatted_text": format_text(x, template=prompt,is_train=False)})
+        train_dataset = train_dataset.map(lambda x: {"formatted_text": format_text_sub(x, template=prompt,is_train=True)})
+        val_dataset = val_dataset.map(lambda x: {"formatted_text": format_text_sub(x, template=prompt,is_train=False)})
         
     print("train_dataset_example : \n ", train_dataset['train']['formatted_text'][0])
     print('val_dataset_example : \n ', val_dataset['train']['formatted_text'][0])
@@ -38,7 +38,7 @@ def train(model_id, peft_path, train_file, val_file, save_dir, batch_size, max_s
         model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, trust_remote_code=True, device_map={'':torch.cuda.current_device()})
     else: 
         model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, trust_remote_code=True,device_map='auto')
-        
+    
     training_args = TrainingArguments(
         output_dir=save_dir + "/SFT/{}".format(model_id.split('/')[-1]+'_{}'.format(template_type)), 
         per_device_train_batch_size=batch_size,
