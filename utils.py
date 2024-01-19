@@ -20,6 +20,7 @@ def format_text_sub(example,template,is_train=True):
 def parse_generated_text(generated_text):
     # 使用正则表达式匹配意图和实体槽位
     intent_pattern = r"intent: ([\w#]+)"
+    # entity_slots_pattern = r"entity_slot: \{([^}]+)\}"
     entity_slots_pattern = r"entity_slot: \{([^}]+)\}"
     utterance_pattern = r"utterance: (.+)"
 
@@ -28,14 +29,26 @@ def parse_generated_text(generated_text):
     intents = intent_match.group(1).split('#') if intent_match else []
 
     # 提取实体槽位
+    # entity_slots_match = re.search(entity_slots_pattern, generated_text)
+    # entity_slots = {}
+    # if entity_slots_match:
+    #     slots_str = entity_slots_match.group(1)
+    #     for slot_str in slots_str.split(', '):
+    #         if ':' in slot_str:
+    #             key, value = slot_str.split(': ',1)
+    #             entity_slots[key.strip("'")] = value.strip("'")
+    
+    # 提取实体槽位
     entity_slots_match = re.search(entity_slots_pattern, generated_text)
     entity_slots = {}
     if entity_slots_match:
         slots_str = entity_slots_match.group(1)
-        for slot_str in slots_str.split(', '):
-            if ':' in slot_str:
-                key, value = slot_str.split(': ',1)
-                entity_slots[key.strip("'")] = value.strip("'")
+        # 使用正则表达式匹配每个键值对
+        key_value_pairs = re.findall(r"'([^']+?)': \[([^\]]+?)\]", slots_str)
+        for key, values_str in key_value_pairs:
+            # 将值分割成列表，去除空格和引号
+            values = [value.strip(" '") for value in values_str.split(',')]
+            entity_slots[key] = values
 
     # 提取utterance
     utterance_match = re.search(utterance_pattern, generated_text)
@@ -43,7 +56,8 @@ def parse_generated_text(generated_text):
 
     return intents, entity_slots, utterance
 
-def convert_dict_to_slots(entity_slots, sentence):
+
+def convert_dict_to_slots_old(entity_slots, sentence):
     words = sentence.split()
     slot_sequence = ['O'] * len(words)  # 初始化槽位序列为全'O'
 
@@ -61,11 +75,47 @@ def convert_dict_to_slots(entity_slots, sentence):
 
     return slot_sequence
 
-def find_sublist_index(sublist, lst):
+
+def find_sublist_index_old(sublist, lst):
     for i in range(len(lst) - len(sublist) + 1):
         if sublist == lst[i:i + len(sublist)]:
             return i
     return -1
+
+def find_sublist_index(sublist, lst, start_index=0):
+    for i in range(start_index, len(lst) - len(sublist) + 1):
+        if sublist == lst[i:i + len(sublist)]:
+            return i
+    return -1
+
+def convert_dict_to_slots(entity_slots, sentence):
+    words = sentence.split()
+    slot_sequence = ['O'] * len(words)
+
+    # 将实体按长度排序，优先处理较长的实体
+    sorted_entities = sorted([(slot_type, slot_value.split())
+                              for slot_type, slot_values in entity_slots.items()
+                              for slot_value in slot_values],
+                             key=lambda x: len(x[1]), reverse=True)
+
+    for slot_type, slot_words in sorted_entities:
+        word_idx = 0
+        while word_idx < len(words):
+            start_index = find_sublist_index(slot_words, words, word_idx)
+
+            if start_index != -1:
+                # 检查当前位置及后续位置是否已被标记
+                if all(tag == 'O' for tag in slot_sequence[start_index:start_index + len(slot_words)]):
+                    slot_sequence[start_index] = f"B-{slot_type}"
+                    for i in range(1, len(slot_words)):
+                        if start_index + i < len(slot_sequence):
+                            slot_sequence[start_index + i] = f"I-{slot_type}"
+                word_idx = start_index + 1  # 适当更新word_idx
+            else:
+                break
+
+    return slot_sequence
+
 
 def get_multi_acc(pred_output, golds):
     acc = 0

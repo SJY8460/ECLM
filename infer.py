@@ -40,12 +40,14 @@ def infer_and_evaluate(test_dataset, test_template, model, tokenizer,generation_
                 true_bio_slots = convert_dict_to_slots(true_slots, test_dataset["train"][i+idx]['utterance'])
                 
                 # supervising
-                if(i % 5 == 0 and idx == infer_batch_size-1):
+                if(i % 5 == 0 and idx > - 1):
                     print("Utterance:")
                     print(utterance0)
                     print(utterance1)
                     print(f"pred_intents: {pred_intents}")
                     print(f"true_intent: {true_intent}")
+                    print("Pre_Entity_Slot: ",pred_slots)
+                    print("True_Entity_Slot: ",true_slots)
                     print(f"pred_bio_slots: {pred_bio_slots}")
                     print(f"true_bio_slots: {true_bio_slots}")
 

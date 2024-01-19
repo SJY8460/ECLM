@@ -18,6 +18,7 @@ def train(model_id, peft_path, train_file, val_file, save_dir, batch_size, max_s
     # 加载数据集
     train_dataset = load_dataset('json', data_files= train_file)
     val_dataset = load_dataset('json', data_files= val_file)
+    
 
     if template_type == 'default':
     # 应用 format_text 到数据集
@@ -45,7 +46,7 @@ def train(model_id, peft_path, train_file, val_file, save_dir, batch_size, max_s
         learning_rate=learning_rate,
         logging_steps=50,
         save_steps=200,
-        # max_steps=max_steps,
+        # max_steps=100,
         max_steps=int(len(train_dataset['train'])/ batch_size),
         optim="paged_adamw_8bit",
         fp16=True,

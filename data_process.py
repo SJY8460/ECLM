@@ -42,6 +42,64 @@ def read_file(file_path, is_train=False):
     else:
         return texts, slots, intents
     
+# def format_data(texts, slots, intents, token_intents=None):
+#     formatted_data = []
+
+#     for text, slot, intent, token_intent in zip(texts, slots, intents, token_intents if token_intents else [None] * len(texts)):
+#         words = text.split()
+#         slot_dict = {}
+#         sub_utterance_dict = {}
+#         current_slot = None
+#         current_value = []
+#         current_sub = []
+#         current_intent = None
+
+#         # 处理slots，转换为字典格式
+#         for word, slot_type in zip(words, slot):
+#             if slot_type.startswith("B-"):
+#                 if current_slot and current_value:
+#                     slot_dict[current_slot] = ' '.join(current_value)
+#                 current_slot = slot_type[2:]
+#                 current_value = [word]
+#             elif slot_type.startswith("I-") and current_slot == slot_type[2:]:
+#                 current_value.append(word)
+#             else:
+#                 if current_slot and current_value:
+#                     slot_dict[current_slot] = ' '.join(current_value)
+#                 current_slot = None
+#                 current_value = []
+
+#         if current_slot and current_value:
+#             slot_dict[current_slot] = ' '.join(current_value)
+
+#         # 处理token_intents，生成子句字典
+#         if token_intent:
+#             for word, ti in zip(words, token_intent):
+#                 if ti != "SEP":
+#                     current_sub.append(word)
+#                     current_intent = ti
+#                 else:
+#                     if current_sub and current_intent:
+#                         sub_utterance_dict[current_intent] = ' '.join(current_sub)
+#                     current_sub = []
+#                     current_intent = None
+
+#             if current_sub and current_intent:
+#                 sub_utterance_dict[current_intent] = ' '.join(current_sub)
+#         else:
+#             sub_utterance_dict = None
+
+#         formatted_example = {
+#             'utterance': text,
+#             'sub_utterance': sub_utterance_dict,
+#             'intent(s)': intent,
+#             'slots': ' '.join(slot),
+#             'entity_slots': slot_dict
+#         }
+#         formatted_data.append(formatted_example)
+
+#     return formatted_data
+
 def format_data(texts, slots, intents, token_intents=None):
     formatted_data = []
 
@@ -57,22 +115,33 @@ def format_data(texts, slots, intents, token_intents=None):
         # 处理slots，转换为字典格式
         for word, slot_type in zip(words, slot):
             if slot_type.startswith("B-"):
-                if current_slot and current_value:
-                    slot_dict[current_slot] = ' '.join(current_value)
+                if current_slot:
+                    # 以列表形式存储所有实体值
+                    if current_slot in slot_dict:
+                        slot_dict[current_slot].append(' '.join(current_value))
+                    else:
+                        slot_dict[current_slot] = [' '.join(current_value)]
                 current_slot = slot_type[2:]
                 current_value = [word]
             elif slot_type.startswith("I-") and current_slot == slot_type[2:]:
                 current_value.append(word)
             else:
-                if current_slot and current_value:
-                    slot_dict[current_slot] = ' '.join(current_value)
+                if current_slot:
+                    if current_slot in slot_dict:
+                        slot_dict[current_slot].append(' '.join(current_value))
+                    else:
+                        slot_dict[current_slot] = [' '.join(current_value)]
                 current_slot = None
                 current_value = []
 
-        if current_slot and current_value:
-            slot_dict[current_slot] = ' '.join(current_value)
+        if current_slot:
+            if current_slot in slot_dict:
+                slot_dict[current_slot].append(' '.join(current_value))
+            else:
+                slot_dict[current_slot] = [' '.join(current_value)]
 
-        # 处理token_intents，生成子句字典
+        
+         # 处理token_intents，生成子句字典
         if token_intent:
             for word, ti in zip(words, token_intent):
                 if ti != "SEP":
@@ -99,7 +168,6 @@ def format_data(texts, slots, intents, token_intents=None):
         formatted_data.append(formatted_example)
 
     return formatted_data
-
 def process_dataset(dataset_name, data_dir, output_dir):
     file_paths = {
         'train': os.path.join(data_dir, f'{dataset_name}/train.txt'),
@@ -127,7 +195,7 @@ def process_dataset(dataset_name, data_dir, output_dir):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process ATIS Dataset")
-    parser.add_argument("--dataset_name", type=str, default="MixSNIPS_clean", help="Name of the dataset to process")
+    parser.add_argument("--dataset_name", type=str, default="MixATIS_clean", help="Name of the dataset to process")
     parser.add_argument("--data_dir", type=str, default="/home/shangjian/code/Research/SLU/Uni-MIS/data/", help="Directory containing the dataset")
     parser.add_argument("--output_dir", type=str, default='/home/shangjian/code/Research/Multimodal & LLM/SLM/data/', help="Directory to save processed data")
     
