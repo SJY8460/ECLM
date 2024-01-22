@@ -9,7 +9,7 @@ from Prompt import test_template,data_template,data_template_sub
 from utils import parse_generated_text, convert_dict_to_slots, get_multi_acc, computeF1Score, semantic_acc,format_text
 from langchain.prompts import PromptTemplate
 
-def load_model(model_id, peft_path, bnb_config, device_map='auto', torch_dtype=torch.float16):
+def load_model(model_id, peft_path, bnb_config, device_map='cuda:0', torch_dtype=torch.float16):
     tokenizer = AutoTokenizer.from_pretrained(model_id,trust_remote_code=True)
     if 'chatglm' not in model_id.lower():
         tokenizer.pad_token = "[PAD]"
@@ -29,7 +29,7 @@ def infer_and_evaluate(test_dataset, test_template, model, tokenizer,generation_
         for i in tqdm(range(0, len(test_dataset["train"]), infer_batch_size), desc="Processing"):
             prompts = texts[i:i + infer_batch_size]
             model_inputs = tokenizer(prompts, return_tensors="pt", padding=True).to(model.device)
-            generation_outputs = model.generate(**model_inputs,generation_config = generation_config, max_length=256, return_dict_in_generate=True, 
+            generation_outputs = model.generate(**model_inputs,generation_config = generation_config, max_length=512, return_dict_in_generate=True, 
                output_scores=False, pad_token_id=tokenizer.eos_token_id).sequences.cpu()
             
             for idx, output in enumerate(tokenizer.batch_decode(generation_outputs, skip_special_tokens=True)):
@@ -40,7 +40,7 @@ def infer_and_evaluate(test_dataset, test_template, model, tokenizer,generation_
                 true_bio_slots = convert_dict_to_slots(true_slots, test_dataset["train"][i+idx]['utterance'])
                 
                 # supervising
-                if(i % 5 == 0 and idx > - 1):
+                if(i % 5 == 0 and idx == infer_batch_size -1):
                     print("Utterance:")
                     print(utterance0)
                     print(utterance1)
@@ -58,13 +58,45 @@ def infer_and_evaluate(test_dataset, test_template, model, tokenizer,generation_
 
     return all_pred_intents, all_true_intents, all_pred_slots, all_true_slots
 
-def save_results(model_id, checkpoint_num, results, save_dir='./save/result'):
+def save_results(model_id, checkpoint_num, results, save_dir='./save/result',template_type='default'):
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
-    file_path = os.path.join(save_dir, f'{model_id.split("/")[-1]}_checkpoint_{checkpoint_num}_results.txt')
+    file_path = os.path.join(save_dir, f'{model_id.split("/")[-1]}_{template_type}_checkpoint_{checkpoint_num}/results.txt')
     with open(file_path, 'w') as file:
         for key, value in results.items():
             file.write(f"{key}: {value}\n")
+    
+def save_intents_slots_results(model_id, checkpoint_num, pred_intents, true_intents, pred_slots, true_slots, save_dir='./save/intents_slots', template_type='default'):
+    """
+    Save predicted and true intents and slots to a specified directory.
+
+    Args:
+    - model_id (str): The ID of the model.
+    - checkpoint_num (int): The checkpoint number.
+    - pred_intents (list): List of predicted intents.
+    - true_intents (list): List of true intents.
+    - pred_slots (list): List of predicted slots.
+    - true_slots (list): List of true slots.
+    - save_dir (str): The directory where the results will be saved.
+    - template_type (str): The type of template used.
+
+    The function will create the directory if it does not exist and save the results in a formatted text file.
+    """
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+
+    file_path = os.path.join(save_dir, f'{model_id.split("/")[-1]}_{template_type}_checkpoint_{checkpoint_num}/intents_slots.txt')
+    
+    with open(file_path, 'w') as file:
+        file.write("Predicted Intents:\n")
+        file.write(str(pred_intents) + "\n\n")
+        file.write("True Intents:\n")
+        file.write(str(true_intents) + "\n\n")
+        file.write("Predicted Slots:\n")
+        file.write(str(pred_slots) + "\n\n")
+        file.write("True Slots:\n")
+        file.write(str(true_slots) + "\n")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Inference and Evaluation Script")
@@ -126,5 +158,9 @@ if __name__ == "__main__":
     dataset_name = args.data_file.split('/')[-2]
     save_directory = f'./save/result/{dataset_name}/'
 
-    save_results(args.model_id, args.checkpoint_num, results,save_directory)
-    print(f"Results saved in {args.model_id.split('/')[-1]}_checkpoint_{args.checkpoint_num}_results.txt")
+    save_results(args.model_id, args.checkpoint_num, results,save_directory, template_type=args.template_type)
+    # 保存预测和真实的意图与槽
+    save_intents_slots_results(args.model_id, args.checkpoint_num, pred_intents, true_intents, 
+            pred_slots, true_slots, save_directory, template_type=args.template_type)
+    
+    # print(f"Results saved in {args.model_id.split('/')[-1]}_{args.template_type}_checkpoint_{args.checkpoint_num}_results.txt")
