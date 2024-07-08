@@ -294,3 +294,5 @@ def semantic_acc(pred_slot, real_slot, pred_intent, real_intent):
         total_count += 1.0
 
     return 1.0 * correct_count / total_count
+
+

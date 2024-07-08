@@ -23,9 +23,9 @@ from utils import format_text
 
 # 加载训练、验证和测试数据
 data_files = {
-    "train": "/home/shangjian/code/Research/Multimodal & LLM/SLM/data/MixATIS_clean/train.json",
-    "validation": "/home/shangjian/code/Research/Multimodal & LLM/SLM/data/MixATIS_clean/dev.json",
-    "test": "/home/shangjian/code/Research/Multimodal & LLM/SLM/data/MixATIS_clean/test.json"
+    "train": "/home/shangjian/code/Research/Multimodal_LLM/SLM/data/MixATIS_clean/train.json",
+    "validation": "/home/shangjian/code/Research/Multimodal_LLM/SLM/data/MixATIS_clean/dev.json",
+    "test": "/home/shangjian/code/Research/Multimodal_LLM/SLM/data/MixATIS_clean/test.json"
 }
 
 # 加载数据集
@@ -54,7 +54,7 @@ print("train_dataset_example:" , train_dataset['train']['formatted_text'][0])
     
 
 # %%
-model_id = "/home/shangjian/code/Research/Multimodal & LLM/dataroot/models/Mistral/Mistral-7B-Instruct-v0.1"
+model_id = "/home/shangjian/code/Research/Multimodal_LLM/dataroot/models/Mistral/Mistral-7B-Instruct-v0.1"
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 tokenizer.pad_token = tokenizer.eos_token
 
@@ -117,7 +117,7 @@ supervised_finetuning_trainer = SFTTrainer(
 supervised_finetuning_trainer.train()
 
 # %%
-save_dir = "/home/shangjian/code/Research/Multimodal & LLM/SLM/save/model/" + model_id.split('/')[-1] 
+save_dir = "/home/shangjian/code/Research/Multimodal_LLM/SLM/save/model/" + model_id.split('/')[-1] 
 supervised_finetuning_trainer.save_model(save_dir)
 
 

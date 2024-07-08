@@ -34,13 +34,8 @@ def read_file(file_path, is_train=False):
             elif len(items) >= 2:
                 text.append(items[0].strip())
                 slot.append(items[1].strip())
-                if is_train:
-                    token_intent.append(items[2].strip())
 
-    if is_train:
-        return texts, slots, intents, token_intents
-    else:
-        return texts, slots, intents
+    return texts, slots, intents
     
 # def format_data(texts, slots, intents, token_intents=None):
 #     formatted_data = []
@@ -178,12 +173,9 @@ def process_dataset(dataset_name, data_dir, output_dir):
     processed_data = {}
     for split in ['train', 'dev', 'test']:
         is_train = split == 'train'
-        if is_train:
-            texts, slots, intents, token_intents = read_file(file_paths[split], is_train)
-            processed_data[split] = format_data(texts, slots, intents, token_intents if is_train else None)
-        else:
-            texts, slots, intents = read_file(file_paths[split], is_train)
-            processed_data[split] = format_data(texts, slots, intents)
+       
+        texts, slots, intents = read_file(file_paths[split], is_train)
+        processed_data[split] = format_data(texts, slots, intents)
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -196,8 +188,8 @@ def process_dataset(dataset_name, data_dir, output_dir):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process ATIS Dataset")
     parser.add_argument("--dataset_name", type=str, default="MixATIS_clean", help="Name of the dataset to process")
-    parser.add_argument("--data_dir", type=str, default="/home/shangjian/code/Research/SLU/Uni-MIS/data/", help="Directory containing the dataset")
-    parser.add_argument("--output_dir", type=str, default='/home/shangjian/code/Research/Multimodal & LLM/SLM/data/', help="Directory to save processed data")
+    parser.add_argument("--data_dir", type=str, default="/home/shangjian/code/Research/Multimodal_LLM/SLM/data/", help="Directory containing the dataset")
+    parser.add_argument("--output_dir", type=str, default='/home/shangjian/code/Research/Multimodal_LLM/SLM/data/', help="Directory to save processed data")
     
     args = parser.parse_args()
     process_dataset(args.dataset_name, args.data_dir, args.output_dir)

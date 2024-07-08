@@ -28,9 +28,9 @@ from utils import parse_generated_text, convert_dict_to_slots, get_multi_acc, se
 
 # 加载训练、验证和测试数据
 data_files = {
-    "train": "/home/shangjian/code/Research/Multimodal & LLM/SLM/data/MixATIS_clean/train.json",
-    "validation": "/home/shangjian/code/Research/Multimodal & LLM/SLM/data/MixATIS_clean/dev.json",
-    "test": "/home/shangjian/code/Research/Multimodal & LLM/SLM/data/MixATIS_clean/test.json"
+    "train": "/home/shangjian/code/Research/Multimodal_LLM/SLM/data/MixATIS_clean/train.json",
+    "validation": "/home/shangjian/code/Research/Multimodal_LLM/SLM/data/MixATIS_clean/dev.json",
+    "test": "/home/shangjian/code/Research/Multimodal_LLM/SLM/data/MixATIS_clean/test.json"
 }
 
 test_dataset =  load_dataset('json', data_files=data_files['test'])
@@ -49,8 +49,8 @@ bnb_config = BitsAndBytesConfig(
     bnb_4bit_compute_dtype=torch.bfloat16
 )
 
-model_id = '/home/shangjian/code/Research/Multimodal & LLM/dataroot/models/Mistral/Mistral-7B-Instruct-v0.1'
-peft_path = "/home/shangjian/code/Research/Multimodal & LLM/SLM/save/model/" + model_id.split('/')[-1] 
+model_id = '/home/shangjian/code/Research/Multimodal_LLM/dataroot/models/Mistral/Mistral-7B-Instruct-v0.1'
+peft_path = "/home/shangjian/code/Research/Multimodal_LLM/SLM/save/model/" + model_id.split('/')[-1] 
 
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 model = AutoModelForCausalLM.from_pretrained(

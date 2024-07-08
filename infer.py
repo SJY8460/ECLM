@@ -6,16 +6,17 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from peft import PeftModel
 from tqdm import tqdm
 from Prompt import test_template,data_template,data_template_sub
-from utils import parse_generated_text, convert_dict_to_slots, get_multi_acc, computeF1Score, semantic_acc,format_text
+from utils import parse_generated_text, convert_dict_to_slots, get_multi_acc, computeF1Score, semantic_acc,format_text,format_text_sub
 from langchain.prompts import PromptTemplate
 
-def load_model(model_id, peft_path, bnb_config, device_map='cuda:0', torch_dtype=torch.float16):
+def load_model(model_id, peft_path, bnb_config, device_map='auto', torch_dtype=torch.float16):
     tokenizer = AutoTokenizer.from_pretrained(model_id,trust_remote_code=True)
     if 'chatglm' not in model_id.lower():
         tokenizer.pad_token = "[PAD]"
         tokenizer.padding_side = "left"
     model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config, use_cache=False, device_map=device_map,trust_remote_code=True)
     model = PeftModel.from_pretrained(model, peft_path, torch_dtype=torch_dtype).bfloat16()
+    # model = AutoModelForCausalLM.from_pretrained(model_id, device_map=device_map,trust_remote_code=True)
     model.eval()
     return model, tokenizer
 
@@ -29,6 +30,7 @@ def infer_and_evaluate(test_dataset, test_template, model, tokenizer,generation_
         for i in tqdm(range(0, len(test_dataset["train"]), infer_batch_size), desc="Processing"):
             prompts = texts[i:i + infer_batch_size]
             model_inputs = tokenizer(prompts, return_tensors="pt", padding=True).to(model.device)
+            
             generation_outputs = model.generate(**model_inputs,generation_config = generation_config, max_length=512, return_dict_in_generate=True, 
                output_scores=False, pad_token_id=tokenizer.eos_token_id).sequences.cpu()
             
@@ -61,10 +63,25 @@ def infer_and_evaluate(test_dataset, test_template, model, tokenizer,generation_
 def save_results(model_id, checkpoint_num, results, save_dir='./save/result',template_type='default'):
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
+        
+    folder_path = os.path.join(save_dir, f'{model_id.split("/")[-1]}_{template_type}_checkpoint_{checkpoint_num}')
+
+    # 检查并创建文件夹路径
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        
     file_path = os.path.join(save_dir, f'{model_id.split("/")[-1]}_{template_type}_checkpoint_{checkpoint_num}/results.txt')
-    with open(file_path, 'w') as file:
-        for key, value in results.items():
-            file.write(f"{key}: {value}\n")
+    if os.path.exists(file_path):
+        # 追加模式打开文件
+        with open(file_path, 'a') as file:
+            for key, value in results.items():
+                # 写入键值对结果，并在每个后面添加换行符
+                file.write(f"{key}: {value}\n")
+    else:
+        # 如果文件不存在，创建文件并写入内容
+        with open(file_path, 'w') as file:
+            for key, value in results.items():
+                file.write(f"{key}: {value}\n")
     
 def save_intents_slots_results(model_id, checkpoint_num, pred_intents, true_intents, pred_slots, true_slots, save_dir='./save/intents_slots', template_type='default'):
     """
@@ -134,10 +151,11 @@ if __name__ == "__main__":
     
     if args.template_type == "sub":
         prompt = PromptTemplate(template=data_template_sub, input_variables=['utterance' 'sub_utterance' 'intent' 'entity_slots'])
+        test_dataset = test_dataset.map(lambda x: {"formatted_text": format_text_sub(x, template=prompt,is_train=False)})
     else:
         prompt = PromptTemplate(template=data_template, input_variables=['utterance' 'intent' 'entity_slots'])
-    
-    test_dataset = test_dataset.map(lambda x: {"formatted_text": format_text(x, template=prompt)})
+        test_dataset = test_dataset.map(lambda x: {"formatted_text": format_text(x, template=prompt)})
+        
     print("test_dataset_example: \n" , test_dataset['train']['formatted_text'][0])
     
     pred_intents, true_intents, pred_slots, true_slots = infer_and_evaluate(test_dataset, test_template, model, tokenizer, generation_config, args.infer_batch_size)

@@ -1,7 +1,7 @@
 import ast
 from utils import parse_generated_text, convert_dict_to_slots, get_multi_acc, computeF1Score, semantic_acc,format_text
 
-def load_intents_slots_from_file(file_path, intent_num=None):
+def load_intents_slots_from_file(file_path, intent_num=2):
     with open(file_path, 'r') as file:
         data = file.read()
 
@@ -23,7 +23,7 @@ def load_intents_slots_from_file(file_path, intent_num=None):
     return pred_intents, true_intents, pred_slots, true_slots
 
 # 使用函数提取数据
-file_path = '/home/shangjian/code/Research/Multimodal & LLM/SLM/save/result/MixATIS_clean/Mistral-7B-Instruct-v0.1_default_checkpoint_1_intents_slots.txt'
+file_path = '/home/shangjian/code/Research/Multimodal_LLM/SLM/save/result/MixATIS_clean/Llama-2-7b-chat-hf_sub_checkpoint_1/intents_slots.txt'
 pred_intents, true_intents, pred_slots, true_slots = load_intents_slots_from_file(file_path)
 
 # 现在您可以使用这些数据进行测试
