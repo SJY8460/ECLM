@@ -62,7 +62,7 @@ def compute_entity_slot_accuracy(pred_slots, true_slots, sentences):
     return correct_count / total_count
 
 
-def load_intents_slots_from_file(file_path, intent_num=None):
+def load_intents_slots_from_file(file_path, intent_num=3):
     with open(file_path, 'r') as file:
         data = file.read()
 
@@ -85,11 +85,11 @@ def load_intents_slots_from_file(file_path, intent_num=None):
 
 
 # 使用函数提取数据
-file_path = '/home/shangjian/code/Research/Multimodal_LLM/SLM/save/result/MixATIS_clean/Mistral-7B-Instruct-v0.1_sub_checkpoint_1/intents_slots.txt'
+file_path = '/scratch/avt2gy/slm/save/result/MixSNIPS_clean/Meta-Llama-3.1-8B-Instruct_ab_plus_5e-05_1_ab_plus_checkpoint_1/intents_slots.txt'
 pred_intents, true_intents, pred_slots, true_slots = load_intents_slots_from_file(file_path)
 
 # 加载测试数据集
-test_dataset = load_dataset('json', data_files='/home/shangjian/code/Research/Multimodal_LLM/SLM/data/MixATIS_clean/test.json')
+test_dataset = load_dataset('json', data_files='./data/MixATIS_clean/test.json')
 sentences = [item['utterance'] for item in test_dataset['train']]
 
 # 现在您可以使用这些数据进行测试

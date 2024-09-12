@@ -1,9 +1,25 @@
-# %%
 import re
 
 def format_text(example, template):
     return template.format(utterance=example['utterance'], intent=example['intent(s)'],
         entity_slots={k: v for k, v in example['entity_slots'].items() if v is not None})
+
+
+def format_text_ab_plus(example, template,is_train=True):
+    return template.format(utterance=example['utterance'], intent=example['intent(s)'],
+        slot=example['slots'])
+
+def format_text_ab(example,template,is_train=True):
+    if is_train:
+        return template.format(utterance=example['utterance'], 
+                                   sub_utterance={k: v for k, v in example['sub_utterance'].items() if v is not None},
+                                   intent=example['intent(s)'],
+                                   slot=example['slots'],)
+    else:
+        return template.format(utterance=example['utterance'], 
+                                  intent=example['intent(s)'],
+                                  sub_utterance = "None",
+                                  slot=example['slots'],)
 
 def format_text_sub(example,template,is_train=True):
     if is_train:
@@ -17,44 +33,64 @@ def format_text_sub(example,template,is_train=True):
                                   sub_utterance = "None",
                                   entity_slots={k: v for k, v in example['entity_slots'].items() if v is not None})
 
-def parse_generated_text(generated_text):
+def parse_generated_text(generated_text,entity=True):
     # 使用正则表达式匹配意图和实体槽位
     intent_pattern = r"intent: ([\w#]+)"
     # entity_slots_pattern = r"entity_slot: \{([^}]+)\}"
     entity_slots_pattern = r"entity_slot: \{([^}]+)\}"
     utterance_pattern = r"utterance: (.+)"
 
+    slots_pattern = r"slot: ([\w\s-]+)"
+
     # 提取意图
     intent_match = re.search(intent_pattern, generated_text)
     intents = intent_match.group(1).split('#') if intent_match else []
 
-    # 提取实体槽位
-    # entity_slots_match = re.search(entity_slots_pattern, generated_text)
-    # entity_slots = {}
-    # if entity_slots_match:
-    #     slots_str = entity_slots_match.group(1)
-    #     for slot_str in slots_str.split(', '):
-    #         if ':' in slot_str:
-    #             key, value = slot_str.split(': ',1)
-    #             entity_slots[key.strip("'")] = value.strip("'")
-    
-    # 提取实体槽位
-    entity_slots_match = re.search(entity_slots_pattern, generated_text)
-    entity_slots = {}
-    if entity_slots_match:
-        slots_str = entity_slots_match.group(1)
-        # 使用正则表达式匹配每个键值对
-        key_value_pairs = re.findall(r"'([^']+?)': \[([^\]]+?)\]", slots_str)
-        for key, values_str in key_value_pairs:
-            # 将值分割成列表，去除空格和引号
-            values = [value.strip(" '") for value in values_str.split(',')]
-            entity_slots[key] = values
+    if entity:  
+        # 提取实体槽位
+        entity_slots_match = re.search(entity_slots_pattern, generated_text)
+        entity_slots = {}
+        if entity_slots_match:
+            slots_str = entity_slots_match.group(1)
+            # 使用正则表达式匹配每个键值对
+            key_value_pairs = re.findall(r"'([^']+?)': \[([^\]]+?)\]", slots_str)
+            for key, values_str in key_value_pairs:
+                # 将值分割成列表，去除空格和引号
+                values = [value.strip(" '") for value in values_str.split(',')]
+                entity_slots[key] = values
 
-    # 提取utterance
-    utterance_match = re.search(utterance_pattern, generated_text)
-    utterance = utterance_match.group(1).strip() if utterance_match else ""
+        # 提取utterance
+        utterance_match = re.search(utterance_pattern, generated_text)
+        utterance = utterance_match.group(1).strip() if utterance_match else ""
 
-    return intents, entity_slots, utterance
+        return intents, entity_slots, utterance
+
+    else:
+        # 提取槽位
+        slots_match = re.search(slots_pattern, generated_text)
+        slots = slots_match.group(1).strip() if slots_match else ""
+        
+        # 提取utterance
+        utterance_match = re.search(utterance_pattern, generated_text)
+        utterance = utterance_match.group(1).strip() if utterance_match else ""
+
+        # 调用 convert_to_slots 确保 slots 序列与句子长度一致
+        slot_sequence = convert_to_slots(slots, utterance)
+
+        return intents, slot_sequence, utterance
+
+
+def convert_to_slots(slots, sentence):
+    words = sentence.split()
+    slot_sequence = ['O'] * len(words)
+
+    # 处理 slots 数据，将其映射到 slot_sequence
+    slots = slots.split() if isinstance(slots, str) else slots
+    for i in range(min(len(slots), len(slot_sequence))):
+        slot_sequence[i] = slots[i]
+
+    return slot_sequence
+
 
 
 def convert_dict_to_slots_old(entity_slots, sentence):
