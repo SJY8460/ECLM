@@ -2,7 +2,9 @@
 
 ## Requirements
 Python 3.8+
+
 PyTorch 2.0+
+
 Additional dependencies specified in requirements.txt
 
 ## Train
