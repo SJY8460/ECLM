@@ -1,17 +1,18 @@
-The official code of paper ECLM.
-# 项目名称
+# The official code of paper ECLM.
 
-本项目提供了用于训练和推断的脚本，基于 Mistral-7B-Instruct-v0.1 模型。你可以通过下面的命令对模型进行微调训练以及推断测试。
+## Requirements
+Python 3.8+
+PyTorch 2.0+
+Additional dependencies specified in requirements.txt
 
-## 环境要求
-
-- Python 3.x
-- PyTorch（请根据实际情况安装合适的版本）
-- 其他依赖请参考 `requirements.txt`（如果有）
-
-## 训练
-
-使用以下命令启动模型训练：
-
+## Train
 ```bash
 python train.py -md "../dataroot/models/Mistral/Mistral-7B-Instruct-v0.1" --template_type sub -bs 4
+python train.py -md "../dataroot/models/Mistral/Mistral-7B-Instruct-v0.1" --train_file "./data/MixSNIPS_clean/train.json" --val_file "./data/MixSNIPS_clean/dev.json" --save_dir "./save/model/snips" --template_type sub  -bs 4 
+Additional scripts specified in train.sh
+
+## Infer
+```bash
+python infer.py -ifb 16 -md "../dataroot/models/Mistral/Mistral-7B-Instruct-v0.1" -pp "./save/model/atis/Mistral-7B-Instruct-v0.1_sub" --template_type sub
+python infer.py -ifb 32 -md "../dataroot/models/Mistral/Mistral-7B-Instruct-v0.1" -pp "./save/model/snips/Mistral-7B-Instruct-v0.1_sub" --data_file "./data/MixSNIPS_clean/test.json" --template_type sub
+Additional scripts specified in infer.sh
